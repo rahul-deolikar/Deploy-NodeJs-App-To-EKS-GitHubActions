@@ -1,0 +1,24 @@
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs
+  labels:
+    app: nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+        - name: pawankahurke
+          image: 690940206480.dkr.ecr.us-east-1.amazonaws.com/pawankahurke:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+```
